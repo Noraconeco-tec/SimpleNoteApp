@@ -1,11 +1,11 @@
 package jp.co.noraconeco.simplenoteapp.ui.note
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import jp.co.noraconeco.simplenoteapp.R
 
 class NoteMainFragment : Fragment() {
@@ -14,7 +14,7 @@ class NoteMainFragment : Fragment() {
         fun newInstance() = NoteMainFragment()
     }
 
-    private lateinit var viewModel: NoteMainViewModel
+    private val viewModel: NoteMainViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,11 +22,4 @@ class NoteMainFragment : Fragment() {
     ): View {
         return inflater.inflate(R.layout.fragment_note_main, container, false)
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(NoteMainViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
 }
