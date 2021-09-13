@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import jp.co.noraconeco.simplenoteapp.databinding.FragmentNoteListBinding
 
+@AndroidEntryPoint
 class NoteListFragment : Fragment() {
 
     companion object {
@@ -25,6 +27,7 @@ class NoteListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentNoteListBinding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
         return binding.root
     }
 
