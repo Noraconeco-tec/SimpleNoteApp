@@ -13,10 +13,17 @@ import jp.co.noraconeco.simplenoteapp.repository.note.NoteRepository
 @InstallIn(SingletonComponent::class)
 internal abstract class NoteModule {
 
+    @Debug
     @Binds
-    abstract fun bindNoteRepository(
+    abstract fun bindDebugNoteRepository(
         inMemoryNoteRepository: InMemoryNoteRepository
-    ) : NoteRepository
+    ): NoteRepository
+
+    @Release
+    @Binds
+    abstract fun bindReleaseNoteRepository(
+        inMemoryNoteRepository: InMemoryNoteRepository
+    ): NoteRepository
 
     @Binds
     abstract fun bindSimpleApp(
