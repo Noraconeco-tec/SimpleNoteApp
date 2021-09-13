@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import jp.co.noraconeco.simplenoteapp.R
+import jp.co.noraconeco.simplenoteapp.databinding.FragmentNoteMainBinding
 
 class NoteMainFragment : Fragment() {
 
@@ -15,11 +15,21 @@ class NoteMainFragment : Fragment() {
     }
 
     private val viewModel: NoteMainViewModel by viewModels()
+    private var _binding: FragmentNoteMainBinding? = null
+    private val binding: FragmentNoteMainBinding
+        get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_note_main, container, false)
+        _binding = FragmentNoteMainBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
