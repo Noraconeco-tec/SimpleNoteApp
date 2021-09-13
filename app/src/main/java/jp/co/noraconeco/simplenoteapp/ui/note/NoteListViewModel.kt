@@ -5,4 +5,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class NoteListViewModel @Inject constructor() : ViewModel()
+internal class NoteListViewModel @Inject constructor() : ViewModel() {
+    val tempString: String = "HELLO NOTE LIST"
+}
