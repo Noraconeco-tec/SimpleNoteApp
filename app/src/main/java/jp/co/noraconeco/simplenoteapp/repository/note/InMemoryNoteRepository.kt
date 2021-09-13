@@ -1,8 +1,9 @@
 package jp.co.noraconeco.simplenoteapp.repository.note
 
 import jp.co.noraconeco.simplenoteapp.model.note.Note
+import javax.inject.Inject
 
-internal class InMemoryNoteRepository : NoteRepository {
+internal class InMemoryNoteRepository @Inject constructor() : NoteRepository {
 
     private val noteList: MutableList<Note> = mutableListOf()
 
