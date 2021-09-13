@@ -1,18 +1,21 @@
 package jp.co.noraconeco.simplenoteapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import jp.co.noraconeco.simplenoteapp.ui.main.MainFragment
+import android.view.LayoutInflater
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import jp.co.noraconeco.simplenoteapp.databinding.MainActivityBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private val viewModel: MainViewModel by viewModels()
+    private lateinit var binding: MainActivityBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
-                .commitNow()
-        }
+
+        val inflater = LayoutInflater.from(this)
+        binding = MainActivityBinding.inflate(inflater)
+        setContentView(binding.root)
     }
 }
