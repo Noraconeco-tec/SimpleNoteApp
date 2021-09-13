@@ -1,7 +1,8 @@
 package jp.co.noraconeco.simplenoteapp.ui.note
 
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class NoteDetailViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
-}
+@HiltViewModel
+class NoteDetailViewModel @Inject constructor() : ViewModel()
