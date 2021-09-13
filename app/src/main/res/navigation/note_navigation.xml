@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/note_navigation"
+    app:startDestination="@id/note_list">
+
+    <fragment
+        android:id="@+id/note_list"
+        android:name="jp.co.noraconeco.simplenoteapp.ui.note.NoteListFragment"
+        tools:layout="@layout/fragment_note_list">
+        <action
+            android:id="@+id/show_note_detail"
+            app:destination="@id/note_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/note_detail"
+        android:name="jp.co.noraconeco.simplenoteapp.ui.note.NoteDetailFragment"
+        tools:layout="@layout/fragment_note_detail" />
+
+</navigation>

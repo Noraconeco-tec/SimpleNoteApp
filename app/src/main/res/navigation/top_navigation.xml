@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/note"
-        android:name="jp.co.noraconeco.simplenoteapp.ui.main.MainFragment"
-        tools:layout="@layout/main_fragment" />
+        android:name="jp.co.noraconeco.simplenoteapp.ui.note.NoteMainFragment"
+        tools:layout="@layout/fragment_note_main" />
 
 </navigation>
