@@ -2,10 +2,13 @@ package jp.co.noraconeco.simplenoteapp.ui.note
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import jp.co.noraconeco.simplenoteapp.BR
+import jp.co.noraconeco.simplenoteapp.R
 
 class NoteListViewAdapter :
     RecyclerView.Adapter<NoteListViewAdapter.ViewHolder>() {
@@ -18,7 +21,14 @@ class NoteListViewAdapter :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(cellViewModel: NoteListCellViewModel) {
+            val clickListener =
+                Navigation.createNavigateOnClickListener(
+                    R.id.show_note_detail,
+                    bundleOf("noteId" to cellViewModel.id)
+                )
+
             binding.setVariable(BR.viewModel, cellViewModel)
+            binding.setVariable(BR.clickListener, clickListener)
         }
     }
 

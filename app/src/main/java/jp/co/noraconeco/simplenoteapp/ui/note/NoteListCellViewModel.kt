@@ -6,6 +6,8 @@ abstract class NoteListCellViewModel(
     override val viewType: Int
 ) : CellViewModel {
 
+    abstract val id: String
+
     companion object {
         const val VIEW_TYPE_SUMMARY = 0
     }

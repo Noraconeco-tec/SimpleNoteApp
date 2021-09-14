@@ -24,9 +24,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:cellViewModels="@{viewModel.cellDataList}"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/cell_note_list"
-                tools:itemCount="1"/>
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="1"
+                tools:listitem="@layout/cell_note_list" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

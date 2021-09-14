@@ -28,7 +28,7 @@ internal class NoteListViewModel @Inject constructor(
             val noteList = simpleNote.allNote
 
             val cellViewModels = noteList.map {
-                NoteListSummaryCellViewModel(it.summary)
+                NoteListSummaryCellViewModel(it.id.toString(), it.summary, it.contents)
             }
 
             _cellDataList.value = cellViewModels

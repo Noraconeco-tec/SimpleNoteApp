@@ -6,19 +6,24 @@
         <variable
             name="viewModel"
             type="jp.co.noraconeco.simplenoteapp.ui.note.NoteListSummaryCellViewModel" />
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
         android:layout_margin="4dp"
+        android:onClick="@{clickListener}"
         app:cardCornerRadius="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="8dp">
 
             <com.google.android.material.textview.MaterialTextView
@@ -26,9 +31,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{viewModel.summary}"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/contents_preview_view"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="サマリ" />
+
+            <TextView
+                android:id="@+id/contents_preview_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:ellipsize="end"
+                android:marqueeRepeatLimit="10"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:text="@{viewModel.contents}"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/summary_text_view"
+                tools:text="内容" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>
