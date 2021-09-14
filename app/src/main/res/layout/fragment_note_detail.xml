@@ -14,6 +14,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_small"
+        app:cardCornerRadius="@dimen/radius_note_card"
         tools:context=".ui.note.NoteDetailFragment">
 
         <ScrollView
@@ -22,10 +24,12 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small">
 
                 <TextView
                     android:id="@+id/summary_text_view"
+                    style="@style/DetailSummaryTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@{viewModel.summary}"
@@ -37,15 +41,21 @@
 
                 <TextView
                     android:id="@+id/contents_text_view"
+                    style="@style/DetailContentsTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_small"
                     android:text="@{viewModel.contents}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/summary_text_view"
                     tools:text="内容" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </ScrollView>
+
     </androidx.cardview.widget.CardView>
+
 </layout>
