@@ -22,7 +22,7 @@ class NoteListViewAdapter :
         }
     }
 
-    var cellViewModels: List<NoteListCellViewModel> = emptyList()
+    private var cellViewModels: List<NoteListCellViewModel> = emptyList()
     private val viewTypeToLayoutId: MutableMap<Int, Int> = mutableMapOf()
 
     override fun getItemViewType(position: Int): Int {
