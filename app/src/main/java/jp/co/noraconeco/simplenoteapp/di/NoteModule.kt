@@ -8,6 +8,7 @@ import jp.co.noraconeco.simplenoteapp.model.SimpleNote
 import jp.co.noraconeco.simplenoteapp.model.SimpleNoteImpl
 import jp.co.noraconeco.simplenoteapp.repository.note.InMemoryNoteRepository
 import jp.co.noraconeco.simplenoteapp.repository.note.NoteRepository
+import jp.co.noraconeco.simplenoteapp.repository.note.DebugInMemoryNoteRepository
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -16,7 +17,7 @@ internal abstract class NoteModule {
     @Debug
     @Binds
     abstract fun bindDebugNoteRepository(
-        inMemoryNoteRepository: InMemoryNoteRepository
+        debugInMemoryNoteRepository: DebugInMemoryNoteRepository
     ): NoteRepository
 
     @Release
