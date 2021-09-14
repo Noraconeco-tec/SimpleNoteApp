@@ -35,10 +35,10 @@ class NoteListViewAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val viewType = viewTypeToLayoutId[viewType] ?: DEFAULT_VIEW_TYPE
+        val layoutId = viewTypeToLayoutId[viewType] ?: DEFAULT_VIEW_TYPE
         val binding: ViewDataBinding = DataBindingUtil.inflate(
             inflater,
-            viewType,
+            layoutId,
             parent,
             false
         )
