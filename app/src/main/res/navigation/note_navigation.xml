@@ -11,7 +11,16 @@
         tools:layout="@layout/fragment_note_list">
         <action
             android:id="@+id/show_note_detail"
-            app:destination="@id/note_detail" />
+            app:destination="@id/note_detail"
+            app:enterAnim="@anim/nav_slide_enter"
+            app:exitAnim="@anim/nav_slide_exit_anim"
+            app:popEnterAnim="@anim/nav_slide_pop_enter_anim"
+            app:popExitAnim="@anim/nav_slide_pop_exit_anim">
+            <argument
+                android:name="noteId"
+                android:defaultValue="@null"
+                app:argType="string" />
+        </action>
     </fragment>
 
     <fragment
