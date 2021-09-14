@@ -4,11 +4,12 @@ import jp.co.noraconeco.simplenoteapp.model.note.Note
 import java.util.*
 import javax.inject.Inject
 
+private val noteList: MutableList<Note> = MutableList(100) {
+    Note(UUID.randomUUID(), "サマリー$it", (0..it).joinToString { "内容" })
+}
+
 internal class DebugInMemoryNoteRepository @Inject constructor() : NoteRepository {
 
-    private val noteList: MutableList<Note> = MutableList(100) {
-        Note(UUID.randomUUID(), "サマリー$it", "内容$it")
-    }
 
     override fun add(item: Note) {
         noteList.add(item)
