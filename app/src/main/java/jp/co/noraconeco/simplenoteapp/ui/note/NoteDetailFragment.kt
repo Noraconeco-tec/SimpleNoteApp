@@ -14,6 +14,8 @@ class NoteDetailFragment : Fragment() {
 
     companion object {
         fun newInstance() = NoteDetailFragment()
+
+        const val KEY_NOTE_ID = "noteId"
     }
 
     private val viewModel: NoteDetailViewModel by viewModels()
@@ -21,13 +23,22 @@ class NoteDetailFragment : Fragment() {
     private val binding: FragmentNoteDetailBinding
         get() = _binding!!
 
+    private val noteId: String?
+        get() = arguments?.getString(KEY_NOTE_ID)
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentNoteDetailBinding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.fetchNoteData(noteId)
     }
 
     override fun onDestroyView() {
