@@ -1,8 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.BaseSimpleNoteApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.BaseSimpleNoteApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="fontFamily">monospace</item>
         <item name="android:textSize">@dimen/text_size_medium</item>
+
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.ActionBar.Primary</item>
+        <item name="colorControlNormal">?attr/colorOnPrimary</item>
+        <item name="actionMenuTextColor">?attr/colorOnPrimary</item>
     </style>
 
     <style name="Theme.SimpleNoteApp" parent="Theme.BaseSimpleNoteApp">
