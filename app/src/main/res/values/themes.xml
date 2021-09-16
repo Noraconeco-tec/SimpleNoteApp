@@ -7,6 +7,8 @@
         <item name="toolbarStyle">@style/Widget.MaterialComponents.ActionBar.Primary</item>
         <item name="colorControlNormal">?attr/colorOnPrimary</item>
         <item name="actionMenuTextColor">?attr/colorOnPrimary</item>
+
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
     </style>
 
     <style name="Theme.SimpleNoteApp" parent="Theme.BaseSimpleNoteApp">

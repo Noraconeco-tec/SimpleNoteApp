@@ -1,5 +1,6 @@
 package jp.co.noraconeco.simplenoteapp.ui
 
+import android.view.View
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import jp.co.noraconeco.simplenoteapp.ui.note.NoteListCellViewModel
@@ -25,5 +26,14 @@ object BindingAdapters {
             recyclerView.adapter = adapter
             adapter
         }
+    }
+
+    @BindingAdapter("onClickNoArgs")
+    @JvmStatic
+    fun bindOnClickNoArguments(
+        view: View,
+        onClick: () -> Unit
+    ) {
+        view.setOnClickListener { onClick() }
     }
 }

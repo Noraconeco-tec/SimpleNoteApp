@@ -1,4 +1,4 @@
-package jp.co.noraconeco.simplenoteapp.di
+package jp.co.noraconeco.simplenoteapp.di.annotation
 
 import javax.inject.Qualifier
 

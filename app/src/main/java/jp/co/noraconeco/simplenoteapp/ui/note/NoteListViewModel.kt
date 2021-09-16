@@ -22,7 +22,7 @@ internal class NoteListViewModel @Inject constructor(
         fetchCellData()
     }
 
-    private fun fetchCellData() {
+    fun fetchCellData() {
         viewModelScope.launch {
             // getCarListData() is a suspend function
             val noteList = simpleNote.allNote

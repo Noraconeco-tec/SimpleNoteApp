@@ -4,11 +4,11 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import jp.co.noraconeco.simplenoteapp.model.SimpleNote
-import jp.co.noraconeco.simplenoteapp.model.SimpleNoteImpl
+import jp.co.noraconeco.simplenoteapp.di.annotation.Debug
+import jp.co.noraconeco.simplenoteapp.di.annotation.Release
+import jp.co.noraconeco.simplenoteapp.repository.note.DebugInMemoryNoteRepository
 import jp.co.noraconeco.simplenoteapp.repository.note.InMemoryNoteRepository
 import jp.co.noraconeco.simplenoteapp.repository.note.NoteRepository
-import jp.co.noraconeco.simplenoteapp.repository.note.DebugInMemoryNoteRepository
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -25,9 +25,4 @@ internal abstract class NoteModule {
     abstract fun bindReleaseNoteRepository(
         inMemoryNoteRepository: InMemoryNoteRepository
     ): NoteRepository
-
-    @Binds
-    abstract fun bindSimpleApp(
-        simpleNoteImpl: SimpleNoteImpl
-    ): SimpleNote
 }

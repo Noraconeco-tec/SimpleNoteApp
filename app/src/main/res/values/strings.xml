@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">SimpleNoteApp</string>
+    <string name="app_name">シンプルメモ</string>
+
+    <string name="input_hint_summary">タイトル</string>
+    <string name="input_hint_contents">内容</string>
+    <string name="save_note">保存</string>
+    <string name="edit_note">編集</string>
+    <string name="new_note">新規作成</string>
 </resources>

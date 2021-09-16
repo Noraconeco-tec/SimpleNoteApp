@@ -2,9 +2,9 @@ package jp.co.noraconeco.simplenoteapp.model
 
 import jp.co.noraconeco.simplenoteapp.model.note.Note
 
-internal interface SimpleNote {
+interface SimpleNote {
     val allNote: Collection<Note>
-    fun createNote(note: Note)
+    fun createNote(summary: String, contents: String)
     fun deleteNote(note: Note)
 }
 
