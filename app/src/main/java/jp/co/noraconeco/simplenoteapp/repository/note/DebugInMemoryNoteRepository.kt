@@ -27,6 +27,13 @@ internal class DebugInMemoryNoteRepository @Inject constructor() : NoteRepositor
         noteList.removeAll { true }
     }
 
+    override fun update(item: Note) {
+        noteList.find { it.id == item.id }?.apply {
+            summary = item.summary
+            contents = item.contents
+        }
+    }
+
     override fun get(index: Int): Note? = noteList.getOrNull(index)
 
     override fun fetch(selection: Collection<Int>): Collection<Note> =

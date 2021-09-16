@@ -4,6 +4,6 @@ import java.util.UUID
 
 data class Note(
     val id: UUID,
-    val summary: String,
-    val contents: String,
+    var summary: String,
+    var contents: String,
 )

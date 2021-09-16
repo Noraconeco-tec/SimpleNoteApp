@@ -24,6 +24,11 @@ internal class SimpleNoteImpl @Inject constructor(
         noteRepository.add(newNote)
     }
 
+    override fun updateNote(id: String, summary: String, contents: String) {
+        val note = Note(UUID.fromString(id), summary, contents)
+        noteRepository.update(note)
+    }
+
     override fun deleteNote(note: Note) {
         noteRepository.remove(note)
     }

@@ -5,6 +5,7 @@ internal interface Repository<Item, Index> {
     fun remove(item: Item)
     fun addAll(item: Collection<Item>)
     fun removeAll()
+    fun update(item: Item)
     fun get(index: Index): Item?
     fun fetch(selection: Collection<Index>): Collection<Item>
     fun getAll(): Collection<Item>

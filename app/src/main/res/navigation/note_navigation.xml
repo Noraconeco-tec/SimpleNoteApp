@@ -29,15 +29,25 @@
     <fragment
         android:id="@+id/note_detail"
         android:name="jp.co.noraconeco.simplenoteapp.ui.note.NoteDetailFragment"
-        tools:layout="@layout/fragment_note_detail" />
+        tools:layout="@layout/fragment_note_detail">
+        <action
+            android:id="@+id/show_note_editing"
+            app:destination="@id/note_editing">
+            <argument
+                android:name="noteId"
+                android:defaultValue="@null"
+                app:argType="string" />
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/note_creating"
         android:name="jp.co.noraconeco.simplenoteapp.ui.note.NoteCreatingFragment"
-        tools:layout="@layout/fragment_note_creating" >
-        <action
-            android:id="@+id/action_note_creating_to_note_detail"
-            app:destination="@id/note_detail" />
-    </fragment>
+        tools:layout="@layout/fragment_note_creating" />
+
+    <fragment
+        android:id="@+id/note_editing"
+        android:name="jp.co.noraconeco.simplenoteapp.ui.note.NoteEditingFragment"
+        tools:layout="@layout/fragment_note_editing" />
 
 </navigation>

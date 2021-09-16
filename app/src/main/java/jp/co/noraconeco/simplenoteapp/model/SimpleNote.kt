@@ -5,6 +5,7 @@ import jp.co.noraconeco.simplenoteapp.model.note.Note
 interface SimpleNote {
     val allNote: Collection<Note>
     fun createNote(summary: String, contents: String)
+    fun updateNote(id: String, summary: String, contents: String)
     fun deleteNote(note: Note)
 }
 

@@ -3,10 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/fragment_note_detail.xml" value="0.16576086956521738" />
-        <entry key="app/src/main/res/layout/fragment_note_list.xml" value="0.16576086956521738" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.2490740740740741" />
+        <entry key="app/src/main/res/drawable/ic_new.xml" value="0.252" />
+        <entry key="app/src/main/res/drawable/ic_new_note.xml" value="0.2155" />
+        <entry key="app/src/main/res/drawable/ic_new_note_b.xml" value="0.223" />
+        <entry key="app/src/main/res/drawable/ic_new_note_color.xml" value="0.175" />
+        <entry key="app/src/main/res/layout/cell_note_list.xml" value="0.43091787439613527" />
+        <entry key="app/src/main/res/layout/fragment_note_creating.xml" value="0.2078125" />
+        <entry key="app/src/main/res/layout/fragment_note_detail.xml" value="0.33112033195020746" />
+        <entry key="app/src/main/res/layout/fragment_note_editing.xml" value="0.2078125" />
+        <entry key="app/src/main/res/layout/fragment_note_list.xml" value="0.2011444091796875" />
         <entry key="app/src/main/res/layout/fragment_note_main.xml" value="0.16576086956521738" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.16576086956521738" />
+        <entry key="app/src/main/res/menu/toolbar_note_creating_menu.xml" value="0.2859375" />
+        <entry key="app/src/main/res/menu/toolbar_note_list_menu.xml" value="0.2078125" />
       </map>
     </option>
   </component>

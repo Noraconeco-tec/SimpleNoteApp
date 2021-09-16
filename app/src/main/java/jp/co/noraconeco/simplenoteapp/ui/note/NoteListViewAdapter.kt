@@ -24,7 +24,7 @@ class NoteListViewAdapter :
             val clickListener =
                 Navigation.createNavigateOnClickListener(
                     R.id.show_note_detail,
-                    bundleOf("noteId" to cellViewModel.id)
+                    bundleOf(NoteDetailFragment.KEY_NOTE_ID to cellViewModel.id)
                 )
 
             binding.setVariable(BR.viewModel, cellViewModel)
