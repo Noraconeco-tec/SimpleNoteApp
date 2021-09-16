@@ -13,4 +13,6 @@
 
     <color name="cell_summary_text_color">@android:color/black</color>
     <color name="cell_contents_text_color">@android:color/darker_gray</color>
+
+    <color name="button_delete_note">#ff6080</color>
 </resources>

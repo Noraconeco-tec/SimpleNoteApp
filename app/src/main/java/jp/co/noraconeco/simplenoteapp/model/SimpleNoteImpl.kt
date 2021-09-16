@@ -12,30 +12,25 @@ internal class SimpleNoteImpl @Inject constructor(
     @Release private val noteRepository: NoteRepository
 ): SimpleNote {
 
-    override val allNote: Collection<Note> = noteRepository.getAll()
+    override suspend fun getAllNote(): Collection<Note> = noteRepository.getAll()
 
-    override fun createNote(summary: String, contents: String) {
-        val newId = createNewId()
-        val newNote = Note(
-            newId,
-            summary,
-            contents
-        )
+    override suspend fun createNote(summary: String, contents: String) {
+        val newNote = Note(createNewId(), summary, contents)
         noteRepository.add(newNote)
     }
 
-    override fun updateNote(id: String, summary: String, contents: String) {
+    override suspend fun updateNote(id: String, summary: String, contents: String) {
         val note = Note(UUID.fromString(id), summary, contents)
         noteRepository.update(note)
     }
 
-    override fun deleteNote(note: Note) {
+    override suspend fun deleteNote(note: Note) {
         noteRepository.remove(note)
     }
 
-    private fun createNewId(): UUID {
+    private suspend fun createNewId(): UUID {
         var uuid = UUID.randomUUID()
-        while (allNote.map { it.id }.contains(uuid)) {
+        while (getAllNote().map { it.id }.contains(uuid)) {
             uuid = UUID.randomUUID()
         }
         return uuid

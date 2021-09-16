@@ -9,6 +9,7 @@ import jp.co.noraconeco.simplenoteapp.di.annotation.Release
 import jp.co.noraconeco.simplenoteapp.repository.note.DebugInMemoryNoteRepository
 import jp.co.noraconeco.simplenoteapp.repository.note.InMemoryNoteRepository
 import jp.co.noraconeco.simplenoteapp.repository.note.NoteRepository
+import jp.co.noraconeco.simplenoteapp.repository.note.RoomNoteRepository
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -23,6 +24,6 @@ internal abstract class NoteModule {
     @Release
     @Binds
     abstract fun bindReleaseNoteRepository(
-        inMemoryNoteRepository: InMemoryNoteRepository
+        roomNoteRepository: RoomNoteRepository
     ): NoteRepository
 }

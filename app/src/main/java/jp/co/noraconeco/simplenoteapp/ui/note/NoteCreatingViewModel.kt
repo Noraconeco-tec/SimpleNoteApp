@@ -1,11 +1,10 @@
 package jp.co.noraconeco.simplenoteapp.ui.note
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jp.co.noraconeco.simplenoteapp.model.SimpleNote
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -32,6 +31,9 @@ internal class NoteCreatingViewModel @Inject constructor(
     fun createNote() {
         val summary = summary.value!!
         val contents = contents.value!!
-        simpleNote.createNote(summary, contents)
+
+        viewModelScope.launch(Dispatchers.IO) {
+            simpleNote.createNote(summary, contents)
+        }
     }
 }

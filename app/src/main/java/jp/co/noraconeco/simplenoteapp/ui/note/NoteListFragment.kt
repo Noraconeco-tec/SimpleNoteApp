@@ -40,6 +40,7 @@ class NoteListFragment : Fragment() {
     ): View {
         _binding = FragmentNoteListBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
 

@@ -7,33 +7,33 @@ internal class InMemoryNoteRepository @Inject constructor() : NoteRepository {
 
     private val noteList: MutableList<Note> = mutableListOf()
 
-    override fun add(item: Note) {
+    override suspend fun add(item: Note) {
         noteList.add(item)
     }
 
-    override fun remove(item: Note) {
+    override suspend fun remove(item: Note) {
         noteList.remove(item)
     }
 
-    override fun addAll(item: Collection<Note>) {
+    override suspend fun addAll(item: Collection<Note>) {
         noteList.addAll(item)
     }
 
-    override fun removeAll() {
+    override suspend fun removeAll() {
         noteList.removeAll { true }
     }
 
-    override fun update(item: Note) {
+    override suspend fun update(item: Note) {
         noteList.find { it.id == item.id }?.apply {
             summary = item.summary
             contents = item.contents
         }
     }
 
-    override fun get(index: Int): Note? = noteList.getOrNull(index)
+    override suspend fun get(index: Int): Note? = noteList.getOrNull(index)
 
-    override fun fetch(selection: Collection<Int>): Collection<Note> =
+    override suspend fun fetch(selection: Collection<Int>): Collection<Note> =
         selection.map { noteList[it] }
 
-    override fun getAll(): Collection<Note> = noteList
+    override suspend fun getAll(): Collection<Note> = noteList
 }

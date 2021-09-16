@@ -1,13 +1,13 @@
 package jp.co.noraconeco.simplenoteapp.repository
 
 internal interface Repository<Item, Index> {
-    fun add(item: Item)
-    fun remove(item: Item)
-    fun addAll(item: Collection<Item>)
-    fun removeAll()
-    fun update(item: Item)
-    fun get(index: Index): Item?
-    fun fetch(selection: Collection<Index>): Collection<Item>
-    fun getAll(): Collection<Item>
+    suspend fun add(item: Item)
+    suspend fun remove(item: Item)
+    suspend fun addAll(item: Collection<Item>)
+    suspend fun removeAll()
+    suspend fun update(item: Item)
+    suspend fun get(index: Index): Item?
+    suspend fun fetch(selection: Collection<Index>): Collection<Item>
+    suspend fun getAll(): Collection<Item>
 }
 

@@ -1,5 +1,6 @@
 package jp.co.noraconeco.simplenoteapp.ui.note
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
@@ -61,7 +62,9 @@ class NoteListViewAdapter :
 
     override fun getItemCount(): Int = cellViewModels.count()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateItems(items: List<NoteListCellViewModel>?) {
         cellViewModels = items ?: emptyList()
+        notifyDataSetChanged()
     }
 }

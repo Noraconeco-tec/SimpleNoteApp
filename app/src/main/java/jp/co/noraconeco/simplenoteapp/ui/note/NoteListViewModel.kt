@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jp.co.noraconeco.simplenoteapp.model.SimpleNote
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -23,15 +25,15 @@ internal class NoteListViewModel @Inject constructor(
     }
 
     fun fetchCellData() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             // getCarListData() is a suspend function
-            val noteList = simpleNote.allNote
+            val noteList = simpleNote.getAllNote()
 
             val cellViewModels = noteList.map {
                 NoteListSummaryCellViewModel(it.id.toString(), it.summary, it.contents)
             }
 
-            _cellDataList.value = cellViewModels
+            _cellDataList.postValue(cellViewModels)
         }
     }
 }

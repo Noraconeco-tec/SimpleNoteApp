@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jp.co.noraconeco.simplenoteapp.model.SimpleNote
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -23,14 +25,13 @@ internal class NoteDetailViewModel @Inject constructor(
     private val _contents: MutableLiveData<String> = MutableLiveData()
 
     fun fetchNoteData(id: String?) {
-
-        viewModelScope.launch {
-            val noteData = simpleNote.allNote.firstOrNull {
+        viewModelScope.launch(Dispatchers.IO) {
+            val noteData = simpleNote.getAllNote().firstOrNull {
                 it.id.toString() == id
             }
 
-            _summary.value = noteData?.summary
-            _contents.value = noteData?.contents
+            _summary.postValue(noteData?.summary)
+            _contents.postValue(noteData?.contents)
         }
     }
 }
