@@ -20,8 +20,7 @@ internal class SimpleNoteImpl @Inject constructor(
         noteRepository.add(newNote)
     }
 
-    override suspend fun updateNote(id: String, summary: String, contents: String) {
-        val note = Note(UUID.fromString(id), summary, contents)
+    override suspend fun updateNote(note: Note) {
         noteRepository.update(note)
     }
 

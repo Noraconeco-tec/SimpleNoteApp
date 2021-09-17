@@ -4,9 +4,9 @@
         <item name="fontFamily">monospace</item>
         <item name="android:textSize">@dimen/text_size_medium</item>
 
-        <item name="toolbarStyle">@style/Widget.MaterialComponents.ActionBar.Primary</item>
         <item name="colorControlNormal">?attr/colorOnPrimary</item>
         <item name="actionMenuTextColor">?attr/colorOnPrimary</item>
+        <item name="titleTextColor">?attr/colorOnPrimary</item>
 
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
     </style>

@@ -3,6 +3,7 @@ package jp.co.noraconeco.simplenoteapp.ui.note
 import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jp.co.noraconeco.simplenoteapp.model.SimpleNote
+import jp.co.noraconeco.simplenoteapp.model.note.Note
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -12,7 +13,7 @@ internal class NoteEditingViewModel @Inject constructor(
     private val simpleNote: SimpleNote
 ) : ViewModel() {
 
-    private lateinit var id: String
+    private lateinit var note: Note
     val summary: MutableLiveData<String> = MutableLiveData("")
     val contents: MutableLiveData<String> = MutableLiveData("")
     private val _canSave: MediatorLiveData<Boolean> = MediatorLiveData()
@@ -34,19 +35,18 @@ internal class NoteEditingViewModel @Inject constructor(
 
         viewModelScope.launch(Dispatchers.IO) {
             val note = simpleNote.getAllNote().first { it.id.toString() == noteId }
-            id = noteId
+            this@NoteEditingViewModel.note = note
             summary.postValue(note.summary)
             contents.postValue(note.contents)
         }
     }
 
     fun updateNote() {
-        val id = this.id
-        val summary = summary.value!!
-        val contents = contents.value!!
+        note.summary = summary.value!!
+        note.contents = contents.value!!
 
         viewModelScope.launch(Dispatchers.IO) {
-            simpleNote.updateNote(id, summary, contents)
+            simpleNote.updateNote(note)
         }
     }
 }
