@@ -21,12 +21,12 @@ internal class NoteEditingViewModel @Inject constructor(
         get() = _canSave
 
     init {
-        this._canSave.addSource(summary, ::updateCanSave)
-        this._canSave.addSource(contents, ::updateCanSave)
-        updateCanSave("")
+        this._canSave.addSource(summary) { updateCanSave() }
+        this._canSave.addSource(contents) { updateCanSave() }
+        updateCanSave()
     }
 
-    private fun updateCanSave(_unused: String) {
+    private fun updateCanSave() {
         _canSave.value = !summary.value.isNullOrBlank() && !contents.value.isNullOrBlank()
     }
 

@@ -19,12 +19,12 @@ internal class NoteCreatingViewModel @Inject constructor(
         get() = _canCreate
 
     init {
-        this._canCreate.addSource(summary, ::updateCanCreate)
-        this._canCreate.addSource(contents, ::updateCanCreate)
-        updateCanCreate("")
+        this._canCreate.addSource(summary) { updateCanCreate() }
+        this._canCreate.addSource(contents) { updateCanCreate() }
+        updateCanCreate()
     }
 
-    private fun updateCanCreate(_unused: String) {
+    private fun updateCanCreate() {
         _canCreate.value = !summary.value.isNullOrBlank() && !contents.value.isNullOrBlank()
     }
 
