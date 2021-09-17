@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  text size  -->
+    <dimen name="text_size_minimum">8sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_maximum">24sp</dimen>
+
+    <!--  margin  -->
+    <dimen name="margin_minimum">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">12dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_maximum">20dp</dimen>
+
+    <!--  padding  -->
+    <dimen name="padding_minimum">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">12dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_maximum">20dp</dimen>
+
+
+    <dimen name="text_size_list_cell_summary">@dimen/text_size_medium</dimen>
+    <dimen name="text_size_list_cell_contents">@dimen/text_size_small</dimen>
+
+    <dimen name="text_size_detail_summary">@dimen/text_size_medium</dimen>
+    <dimen name="text_size_detail_contents">@dimen/text_size_small</dimen>
+
+    <dimen name="radius_note_card">8dp</dimen>
+    <dimen name="height_note_list_cell">120dp</dimen>
+    <dimen name="button_size_delete">36dp</dimen>
+</resources>
