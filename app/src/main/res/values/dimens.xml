@@ -30,5 +30,5 @@
 
     <dimen name="radius_note_card">8dp</dimen>
     <dimen name="height_note_list_cell">120dp</dimen>
-    <dimen name="button_size_delete">40dp</dimen>
+    <dimen name="button_size_delete">36dp</dimen>
 </resources>

@@ -6,4 +6,6 @@
     <string name="save_note">保存</string>
     <string name="edit_note">編集</string>
     <string name="new_note">新規作成</string>
+    <string name="notify_deleted_a_note">メモを削除しました</string>
+    <string name="button_undo">元に戻す</string>
 </resources>

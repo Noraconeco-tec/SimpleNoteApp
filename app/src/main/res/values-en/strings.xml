@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SimpleNoteApp</string>
+    <string name="app_name">SimpleNote</string>
 
     <string name="input_hint_summary">Summary</string>
     <string name="input_hint_contents">Contents</string>
     <string name="save_note">Save</string>
     <string name="edit_note">Edit</string>
     <string name="new_note">New note</string>
+    <string name="notify_deleted_a_note">Deleted a note.</string>
+    <string name="button_undo">Undo</string>
 </resources>

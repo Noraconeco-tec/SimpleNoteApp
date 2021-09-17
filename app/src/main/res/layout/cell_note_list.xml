@@ -8,7 +8,11 @@
             type="jp.co.noraconeco.simplenoteapp.ui.note.NoteListSummaryCellViewModel" />
 
         <variable
-            name="clickListener"
+            name="noteClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="deleteClickListener"
             type="android.view.View.OnClickListener" />
     </data>
 
@@ -18,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_note_list_cell"
         android:layout_margin="@dimen/margin_minimum"
-        android:onClick="@{clickListener}"
+        android:onClick="@{noteClickListener}"
         app:cardCornerRadius="@dimen/radius_note_card">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -49,6 +53,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/summary_text_view"
                 tools:text="内容" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/delete_button"
+                style="@style/DeleteButton"
+                android:layout_width="@dimen/button_size_delete"
+                android:layout_height="@dimen/button_size_delete"
+                android:background="?selectableItemBackgroundBorderless"
+                android:foreground="@drawable/ic_delete"
+                android:foregroundTint="@color/button_delete_note"
+                android:onClick="@{deleteClickListener}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

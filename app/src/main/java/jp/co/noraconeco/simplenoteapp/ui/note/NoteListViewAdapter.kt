@@ -2,12 +2,14 @@ package jp.co.noraconeco.simplenoteapp.ui.note
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import jp.co.noraconeco.simplenoteapp.BR
 import jp.co.noraconeco.simplenoteapp.R
 
@@ -22,14 +24,25 @@ class NoteListViewAdapter :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(cellViewModel: NoteListCellViewModel) {
-            val clickListener =
+            val noteClickListener =
                 Navigation.createNavigateOnClickListener(
                     R.id.show_note_detail,
                     bundleOf(NoteDetailFragment.KEY_NOTE_ID to cellViewModel.id)
                 )
 
+            val deleteClickListener = View.OnClickListener {
+                cellViewModel.deleteNote()
+                Snackbar.make(binding.root, R.string.notify_deleted_a_note, Snackbar.LENGTH_LONG)
+                    .apply {
+                        setAction(R.string.button_undo) {
+                            cellViewModel.undoNote()
+                        }
+                    }.show()
+            }
+
             binding.setVariable(BR.viewModel, cellViewModel)
-            binding.setVariable(BR.clickListener, clickListener)
+            binding.setVariable(BR.noteClickListener, noteClickListener)
+            binding.setVariable(BR.deleteClickListener, deleteClickListener)
         }
     }
 

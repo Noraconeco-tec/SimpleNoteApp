@@ -8,7 +8,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import jp.co.noraconeco.simplenoteapp.model.SimpleNote
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -30,9 +29,29 @@ internal class NoteListViewModel @Inject constructor(
             val noteList = simpleNote.getAllNote()
 
             val cellViewModels = noteList.map {
-                NoteListSummaryCellViewModel(it.id.toString(), it.summary, it.contents)
-            }
 
+                val deleteNote: () -> Unit = {
+                    viewModelScope.launch(Dispatchers.IO) {
+                        simpleNote.deleteNote(it)
+                        fetchCellData()
+                    }
+                }
+
+                val undoNote: () -> Unit = {
+                    viewModelScope.launch(Dispatchers.IO) {
+                        simpleNote.createNote(it.summary, it.contents)
+                        fetchCellData()
+                    }
+                }
+
+                NoteListSummaryCellViewModel(
+                    it.id.toString(),
+                    it.summary,
+                    it.contents,
+                    deleteNote,
+                    undoNote
+                )
+            }
             _cellDataList.postValue(cellViewModels)
         }
     }

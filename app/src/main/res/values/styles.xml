@@ -5,6 +5,7 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size_list_cell_summary</item>
     </style>
+
     <style name="ListCellContentsTextView" parent="Theme.SimpleNoteApp">
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/cell_contents_text_color</item>
@@ -21,5 +22,9 @@
     <style name="DetailContentsTextView" parent="Theme.SimpleNoteApp">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">@dimen/text_size_detail_contents</item>
+    </style>
+
+    <style name="DeleteButton" parent="Theme.SimpleNoteApp">
+        <item name="colorControlHighlight">@color/button_delete_note</item>
     </style>
 </resources>
