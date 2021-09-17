@@ -3,19 +3,20 @@ package jp.co.noraconeco.simplenoteapp.model
 import jp.co.noraconeco.simplenoteapp.di.annotation.Release
 import jp.co.noraconeco.simplenoteapp.model.note.Note
 import jp.co.noraconeco.simplenoteapp.repository.note.NoteRepository
-import java.util.UUID
+import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 internal class SimpleNoteImpl @Inject constructor(
     @Release private val noteRepository: NoteRepository
-): SimpleNote {
+) : SimpleNote {
 
     override suspend fun getAllNote(): Collection<Note> = noteRepository.getAll()
 
     override suspend fun createNote(summary: String, contents: String) {
-        val newNote = Note(createNewId(), summary, contents)
+        val createdDate = Date()
+        val newNote = Note(createNewId(), summary, contents, createdDate)
         noteRepository.add(newNote)
     }
 
@@ -26,6 +27,10 @@ internal class SimpleNoteImpl @Inject constructor(
 
     override suspend fun deleteNote(note: Note) {
         noteRepository.remove(note)
+    }
+
+    override suspend fun undoNote(note: Note) {
+        noteRepository.add(note)
     }
 
     private suspend fun createNewId(): UUID {

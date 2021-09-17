@@ -4,8 +4,11 @@ import androidx.room.*
 
 @Dao
 interface DBNoteDao {
-    @Query("SELECT * FROM note")
+    @Query("SELECT * FROM note ORDER BY created_date DESC")
     fun getAll(): List<DBNote>
+
+    @Query("SELECT * FROM note WHERE id = :id")
+    fun get(id: String): DBNote?
 
     @Update
     fun update(user: DBNote)
@@ -18,4 +21,7 @@ interface DBNoteDao {
 
     @Delete
     fun delete(note: DBNote)
+
+    @Query("DELETE FROM note")
+    fun deleteAll()
 }

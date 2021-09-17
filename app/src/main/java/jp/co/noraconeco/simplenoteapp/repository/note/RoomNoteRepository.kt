@@ -24,19 +24,19 @@ class RoomNoteRepository @Inject constructor(
     }
 
     override suspend fun removeAll() {
-        TODO("Not yet implemented")
+        database.noteDao().deleteAll()
     }
 
     override suspend fun update(item: Note) {
         database.noteDao().update(item.toDBNote())
     }
 
-    override suspend fun get(index: Int): Note? {
-        TODO("Not yet implemented")
+    override suspend fun get(index: UUID): Note? {
+        return database.noteDao().get(index.toString())?.toNote()
     }
 
-    override suspend fun fetch(selection: Collection<Int>): Collection<Note> {
-        TODO("Not yet implemented")
+    override suspend fun fetch(selection: Collection<UUID>): Collection<Note> {
+        TODO("Not yet implemented.")
     }
 
     override suspend fun getAll(): Collection<Note> {
@@ -45,13 +45,13 @@ class RoomNoteRepository @Inject constructor(
 
     private fun Note.toDBNote(): DBNote {
         return run {
-            DBNote(id.toString(), summary, contents)
+            DBNote(id.toString(), summary, contents, createdDate)
         }
     }
 
     private fun DBNote.toNote(): Note {
         return run {
-            Note(UUID.fromString(id), summary, contents)
+            Note(UUID.fromString(id), summary, contents, createdDate)
         }
     }
 }

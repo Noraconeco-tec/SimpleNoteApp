@@ -39,7 +39,7 @@ internal class NoteListViewModel @Inject constructor(
 
                 val undoNote: () -> Unit = {
                     viewModelScope.launch(Dispatchers.IO) {
-                        simpleNote.createNote(it.summary, it.contents)
+                        simpleNote.undoNote(it)
                         fetchCellData()
                     }
                 }

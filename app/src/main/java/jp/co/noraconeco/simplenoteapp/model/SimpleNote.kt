@@ -7,5 +7,6 @@ interface SimpleNote {
     suspend fun createNote(summary: String, contents: String)
     suspend fun updateNote(id: String, summary: String, contents: String)
     suspend fun deleteNote(note: Note)
+    suspend fun undoNote(note: Note)
 }
 

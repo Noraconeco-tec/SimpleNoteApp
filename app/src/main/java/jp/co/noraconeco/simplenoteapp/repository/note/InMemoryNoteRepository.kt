@@ -1,6 +1,7 @@
 package jp.co.noraconeco.simplenoteapp.repository.note
 
 import jp.co.noraconeco.simplenoteapp.model.note.Note
+import java.util.*
 import javax.inject.Inject
 
 internal class InMemoryNoteRepository @Inject constructor() : NoteRepository {
@@ -30,10 +31,10 @@ internal class InMemoryNoteRepository @Inject constructor() : NoteRepository {
         }
     }
 
-    override suspend fun get(index: Int): Note? = noteList.getOrNull(index)
+    override suspend fun get(index: UUID): Note? = noteList.firstOrNull { it.id == index }
 
-    override suspend fun fetch(selection: Collection<Int>): Collection<Note> =
-        selection.map { noteList[it] }
+    override suspend fun fetch(selection: Collection<UUID>): Collection<Note> =
+        selection.map { get(it)!! }
 
     override suspend fun getAll(): Collection<Note> = noteList
 }
