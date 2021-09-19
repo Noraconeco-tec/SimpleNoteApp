@@ -3,6 +3,10 @@ package jp.co.noraconeco.simplenoteapp.repository.note
 import jp.co.noraconeco.simplenoteapp.database.AppDatabase
 import jp.co.noraconeco.simplenoteapp.database.note.DBNote
 import jp.co.noraconeco.simplenoteapp.model.note.Note
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flow
 import java.util.*
 import javax.inject.Inject
 
@@ -36,11 +40,24 @@ class RoomNoteRepository @Inject constructor(
     }
 
     override suspend fun fetch(selection: Collection<UUID>): Collection<Note> {
-        TODO("Not yet implemented.")
+        return database
+            .noteDao()
+            .fetch(
+                selection.map { it.toString() }
+            )
+            .map { it.toNote() }
     }
 
     override suspend fun getAll(): Collection<Note> {
         return database.noteDao().getAll().map { it.toNote() }
+    }
+
+    override suspend fun getAllFlow(): Flow<Collection<Note>> {
+        return flow {
+            database.noteDao().getAllFlow().collect { dbNotes ->
+                emit(dbNotes.map { it.toNote() })
+            }
+        }
     }
 
     private fun Note.toDBNote(): DBNote {

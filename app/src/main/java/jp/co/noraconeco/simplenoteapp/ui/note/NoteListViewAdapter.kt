@@ -20,6 +20,10 @@ class NoteListViewAdapter :
         const val DEFAULT_VIEW_TYPE = 0
     }
 
+    init {
+        setHasStableIds(true)
+    }
+
     inner class ViewHolder(private val binding: ViewDataBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -74,6 +78,10 @@ class NoteListViewAdapter :
     }
 
     override fun getItemCount(): Int = cellViewModels.count()
+
+    override fun getItemId(position: Int): Long {
+        return cellViewModels[position].id.hashCode().toLong()
+    }
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateItems(items: List<NoteListCellViewModel>?) {

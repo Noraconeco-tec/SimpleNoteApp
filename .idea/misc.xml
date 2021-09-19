@@ -16,7 +16,7 @@
         <entry key="app/src/main/res/layout/fragment_note_creating.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/fragment_note_detail.xml" value="0.33112033195020746" />
         <entry key="app/src/main/res/layout/fragment_note_editing.xml" value="0.2078125" />
-        <entry key="app/src/main/res/layout/fragment_note_list.xml" value="0.2011444091796875" />
+        <entry key="app/src/main/res/layout/fragment_note_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_note_main.xml" value="0.16576086956521738" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.16576086956521738" />
         <entry key="app/src/main/res/layout/snackbar_deleted_note.xml" value="0.23333333333333334" />
