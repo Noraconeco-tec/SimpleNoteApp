@@ -28,11 +28,6 @@ class NoteListFragment : Fragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onResume() {
-        super.onResume()
-        viewModel.fetchCellData()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
