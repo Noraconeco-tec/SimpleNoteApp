@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import jp.co.noraconeco.simplenoteapp.databinding.FragmentNoteMainBinding
 
@@ -16,7 +15,6 @@ class NoteMainFragment : Fragment() {
         fun newInstance() = NoteMainFragment()
     }
 
-    private val viewModel: NoteMainViewModel by viewModels()
     private var _binding: FragmentNoteMainBinding? = null
     private val binding: FragmentNoteMainBinding
         get() = _binding!!

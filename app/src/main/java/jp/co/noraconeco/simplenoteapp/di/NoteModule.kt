@@ -7,7 +7,6 @@ import dagger.hilt.components.SingletonComponent
 import jp.co.noraconeco.simplenoteapp.di.annotation.Debug
 import jp.co.noraconeco.simplenoteapp.di.annotation.Release
 import jp.co.noraconeco.simplenoteapp.repository.note.DebugInMemoryNoteRepository
-import jp.co.noraconeco.simplenoteapp.repository.note.InMemoryNoteRepository
 import jp.co.noraconeco.simplenoteapp.repository.note.NoteRepository
 import jp.co.noraconeco.simplenoteapp.repository.note.RoomNoteRepository
 

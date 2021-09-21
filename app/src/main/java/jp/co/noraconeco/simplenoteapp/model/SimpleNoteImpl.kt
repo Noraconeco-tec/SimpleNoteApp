@@ -1,6 +1,5 @@
 package jp.co.noraconeco.simplenoteapp.model
 
-import jp.co.noraconeco.simplenoteapp.di.annotation.Debug
 import jp.co.noraconeco.simplenoteapp.di.annotation.Release
 import jp.co.noraconeco.simplenoteapp.model.note.Note
 import jp.co.noraconeco.simplenoteapp.repository.note.NoteRepository

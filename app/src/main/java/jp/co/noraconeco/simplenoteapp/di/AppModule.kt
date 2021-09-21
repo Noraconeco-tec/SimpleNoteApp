@@ -15,6 +15,5 @@ abstract class AppModule {
     internal abstract fun bindSimpleNote(
         simpleNoteImpl: SimpleNoteImpl
     ): SimpleNote
-
 }
 

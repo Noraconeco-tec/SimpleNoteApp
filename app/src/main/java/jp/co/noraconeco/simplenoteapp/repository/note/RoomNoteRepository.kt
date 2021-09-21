@@ -4,7 +4,6 @@ import jp.co.noraconeco.simplenoteapp.database.AppDatabase
 import jp.co.noraconeco.simplenoteapp.database.note.DBNote
 import jp.co.noraconeco.simplenoteapp.model.note.Note
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import java.util.*

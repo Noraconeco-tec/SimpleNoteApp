@@ -23,7 +23,7 @@ import java.util.*
 @RunWith(AndroidJUnit4::class)
 internal class RoomNoteRepositoryTest {
 
-    lateinit var target: RoomNoteRepository
+    private lateinit var target: RoomNoteRepository
 
     @Before
     fun setUp() {
