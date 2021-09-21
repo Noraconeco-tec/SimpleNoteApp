@@ -1,13 +1,18 @@
 pluginManagement {
+    ext {
+        hilt_version = '2.38.1'
+        kotlin_version = '1.5.30'
+        gradle_version = '7.1.0-alpha11'
+    }
     repositories {
         gradlePluginPortal()
         google()
         mavenCentral()
     }
     plugins {
-        id 'com.android.application' version '7.1.0-alpha09'
-        id 'com.android.library' version '7.1.0-alpha09'
-        id 'org.jetbrains.kotlin.android' version '1.5.30'
+        id 'com.android.application' version gradle_version
+        id 'com.android.library' version gradle_version
+        id 'org.jetbrains.kotlin.android' version kotlin_version
     }
 }
 dependencyResolutionManagement {

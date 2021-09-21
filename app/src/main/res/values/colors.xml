@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="primaryColor">#b39ddb</color>
+    <color name="primaryLightColor">#e6ceff</color>
+    <color name="primaryDarkColor">#836fa9</color>
+    <color name="primaryTextColor">#000000</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="window_background_light">#e0e0f0</color>
+    <color name="window_background_dark">#303030</color>
+
+    <color name="cell_summary_text_color" tools:keep="@color/cell_summary_text_color">@android:color/black</color>
+    <color name="cell_contents_text_color">@android:color/darker_gray</color>
+
+    <color name="button_delete_note">#ff6080</color>
 </resources>

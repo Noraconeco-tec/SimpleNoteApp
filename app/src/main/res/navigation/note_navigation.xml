@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/note_navigation"
+    app:startDestination="@id/note_list">
+
+    <fragment
+        android:id="@+id/note_list"
+        android:name="jp.co.noraconeco.simplenoteapp.ui.note.NoteListFragment"
+        tools:layout="@layout/fragment_note_list">
+        <action
+            android:id="@+id/show_note_detail"
+            app:destination="@id/note_detail"
+            app:enterAnim="@anim/nav_slide_enter"
+            app:exitAnim="@anim/nav_slide_exit_anim"
+            app:popEnterAnim="@anim/nav_slide_pop_enter_anim"
+            app:popExitAnim="@anim/nav_slide_pop_exit_anim">
+            <argument
+                android:name="noteId"
+                android:defaultValue="@null"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/show_note_creating"
+            app:destination="@id/note_creating"
+            app:enterAnim="@anim/nav_up_enter_anim"
+            app:exitAnim="@anim/nav_up_exit_anim"
+            app:popEnterAnim="@anim/nav_up_pop_enter_anim"
+            app:popExitAnim="@anim/nav_up_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/note_detail"
+        android:name="jp.co.noraconeco.simplenoteapp.ui.note.NoteDetailFragment"
+        tools:layout="@layout/fragment_note_detail">
+        <action
+            android:id="@+id/show_note_editing"
+            app:destination="@id/note_editing">
+            <argument
+                android:name="noteId"
+                android:defaultValue="@null"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/note_creating"
+        android:name="jp.co.noraconeco.simplenoteapp.ui.note.NoteCreatingFragment"
+        tools:layout="@layout/fragment_note_creating" />
+
+    <fragment
+        android:id="@+id/note_editing"
+        android:name="jp.co.noraconeco.simplenoteapp.ui.note.NoteEditingFragment"
+        tools:layout="@layout/fragment_note_editing" />
+
+</navigation>

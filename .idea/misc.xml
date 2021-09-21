@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.2490740740740741" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_delete.xml" value="0.157" />
+        <entry key="app/src/main/res/drawable/ic_delete_ripple.xml" value="0.227" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.157" />
+        <entry key="app/src/main/res/drawable/ic_new.xml" value="0.252" />
+        <entry key="app/src/main/res/drawable/ic_new_note.xml" value="0.2155" />
+        <entry key="app/src/main/res/drawable/ic_new_note_b.xml" value="0.223" />
+        <entry key="app/src/main/res/drawable/ic_new_note_color.xml" value="0.175" />
+        <entry key="app/src/main/res/drawable/ripple_delete.xml" value="0.215" />
+        <entry key="app/src/main/res/layout/cell_note_list.xml" value="0.4045323763492603" />
+        <entry key="app/src/main/res/layout/fragment_note_creating.xml" value="0.2078125" />
+        <entry key="app/src/main/res/layout/fragment_note_detail.xml" value="0.33112033195020746" />
+        <entry key="app/src/main/res/layout/fragment_note_editing.xml" value="0.2078125" />
+        <entry key="app/src/main/res/layout/fragment_note_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_note_main.xml" value="0.16576086956521738" />
+        <entry key="app/src/main/res/layout/main_activity.xml" value="0.16576086956521738" />
+        <entry key="app/src/main/res/layout/snackbar_deleted_note.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/menu/toolbar_note_creating_menu.xml" value="0.2859375" />
+        <entry key="app/src/main/res/menu/toolbar_note_list_menu.xml" value="0.2078125" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="androidx.databinding.BindingAdapter" />
+      <item index="1" class="java.lang.String" itemvalue="dagger.Binds" />
+      <item index="2" class="java.lang.String" itemvalue="jp.co.noraconeco.simplenoteapp.di.annotation.Debug" />
+      <item index="3" class="java.lang.String" itemvalue="jp.co.noraconeco.simplenoteapp.di.annotation.Release" />
+    </list>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
